@@ -71,7 +71,7 @@ export const messages = {
         ],
         status: 'FULL SOURCE ON GITHUB',
         link: 'Browse the source',
-        href: 'https://github.com/YOURUSERNAME',
+        href: 'https://github.com/Andres-de-Fonoliousa',
       },
       p2: {
         tag: 'Python • Async • Automation',
@@ -85,7 +85,7 @@ export const messages = {
         ],
         status: 'FULL SOURCE ON GITHUB',
         link: 'Browse the source',
-        href: 'https://github.com/YOURUSERNAME',
+        href: 'https://github.com/Andres-de-Fonoliousa',
       },
       p3: {
         tag: 'Three.js • MediaPipe • WebGL',
@@ -94,7 +94,7 @@ export const messages = {
         points: [],
         status: 'OPEN SOURCE',
         link: 'Browse the source',
-        href: 'https://github.com/YOURUSERNAME',
+        href: 'https://github.com/Andres-de-Fonoliousa',
       },
       chat: [
         { who: 'bot', text: 'New order received: <b>#4921</b>' },
@@ -133,10 +133,12 @@ export const messages = {
       labels: {
         email: 'Email',
         github: 'GitHub',
-        linkedin: 'LinkedIn',
+        telegram: 'Telegram',
+        whatsapp: 'WhatsApp',
         location: 'Location',
       },
       location: 'Remote • UTC+3',
+      phone: '0982 749 452',
     },
     faq: {
       label: 'FAQ',
@@ -171,7 +173,7 @@ export const messages = {
     footer: {
       built: 'Built with Vue, Tailwind, and coffee.',
       github: 'GitHub',
-      linkedin: 'LinkedIn',
+      telegram: 'Telegram',
       email: 'Email',
     },
     marquee: ['Laravel', 'Vue 3', 'Python', 'Tailwind CSS', 'REST APIs', 'Redis', 'MySQL', 'Async bots', 'Ubuntu', 'Docker', 'Git'],
@@ -247,7 +249,7 @@ export const messages = {
         ],
         status: 'المصدر كاملاً على GitHub',
         link: 'تصفّح المصدر',
-        href: 'https://github.com/YOURUSERNAME',
+        href: 'https://github.com/Andres-de-Fonoliousa',
       },
       p2: {
         tag: 'بايثون • غير متزامن • أتمتة',
@@ -261,7 +263,7 @@ export const messages = {
         ],
         status: 'المصدر كاملاً على GitHub',
         link: 'تصفّح المصدر',
-        href: 'https://github.com/YOURUSERNAME',
+        href: 'https://github.com/Andres-de-Fonoliousa',
       },
       p3: {
         tag: 'Three.js • MediaPipe • WebGL',
@@ -270,7 +272,7 @@ export const messages = {
         points: [],
         status: 'مفتوح المصدر',
         link: 'تصفّح المصدر',
-        href: 'https://github.com/YOURUSERNAME',
+        href: 'https://github.com/Andres-de-Fonoliousa',
       },
       chat: [
         { who: 'bot', text: 'وصل طلب جديد: <b>#4921</b>' },
@@ -309,10 +311,12 @@ export const messages = {
       labels: {
         email: 'البريد الإلكتروني',
         github: 'GitHub',
-        linkedin: 'لينكدإن',
+        telegram: 'تيليجرام',
+        whatsapp: 'واتساب',
         location: 'الموقع',
       },
       location: 'عن بُعد • UTC+3',
+      phone: '0982 749 452',
     },
     faq: {
       label: 'الأسئلة الشائعة',
@@ -347,7 +351,7 @@ export const messages = {
     footer: {
       built: 'بُني بـ Vue وTailwind... والكثير من القهوة.',
       github: 'GitHub',
-      linkedin: 'لينكدإن',
+      telegram: 'تيليجرام',
       email: 'البريد',
     },
     marquee: [' Laravel', 'Vue 3', 'Python', 'Tailwind CSS', 'REST APIs', 'Redis', 'MySQL', 'بوتات غير متزامنة', 'Ubuntu', 'Docker', 'Git'],

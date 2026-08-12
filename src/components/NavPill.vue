@@ -14,7 +14,7 @@ const nav = useI18n('nav')
     <a href="#stack" class="link-underline transition-colors hover:text-indigo">{{ nav.stack }}</a>
     <a href="#faq" class="link-underline transition-colors hover:text-indigo">{{ nav.faq }}</a>
     <a
-      href="mailto:hello@yourdomain.dev"
+      href="mailto:astroid198@gmail.com"
       class="flex items-center gap-1.5 text-indigo transition-colors hover:text-indigo-deep"
     >
       <Mail :size="14" />

@@ -1,5 +1,5 @@
 <script setup>
-import { Github, Linkedin, Mail } from 'lucide-vue-next'
+import { Github, Send, Mail } from 'lucide-vue-next'
 import { useI18n } from '../i18n.js'
 
 const footer = useI18n('footer')
@@ -18,13 +18,13 @@ const year = new Date().getFullYear()
         © {{ year }} Yazan (CoreX). {{ footer.built }}
       </p>
       <div class="flex items-center gap-6 text-sm text-slate-300">
-        <a href="https://github.com/YOURUSERNAME" target="_blank" rel="noopener" class="link-underline transition-colors hover:text-white">
+        <a href="https://github.com/Andres-de-Fonoliousa" target="_blank" rel="noopener" class="link-underline transition-colors hover:text-white">
           <span class="flex items-center gap-1.5"><Github :size="16" /> {{ footer.github }}</span>
         </a>
-        <a href="https://linkedin.com/in/YOURUSERNAME" target="_blank" rel="noopener" class="link-underline transition-colors hover:text-white">
-          <span class="flex items-center gap-1.5"><Linkedin :size="16" /> {{ footer.linkedin }}</span>
+        <a href="https://t.me/Zenin0o" target="_blank" rel="noopener" class="link-underline transition-colors hover:text-white">
+          <span class="flex items-center gap-1.5"><Send :size="16" /> {{ footer.telegram }}</span>
         </a>
-        <a href="mailto:hello@yourdomain.dev" class="link-underline transition-colors hover:text-white">
+        <a href="mailto:astroid198@gmail.com" class="link-underline transition-colors hover:text-white">
           <span class="flex items-center gap-1.5"><Mail :size="16" /> {{ footer.email }}</span>
         </a>
       </div>

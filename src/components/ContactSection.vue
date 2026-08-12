@@ -1,14 +1,15 @@
 <script setup>
-import { Mail, Github, Linkedin, MapPin } from 'lucide-vue-next'
+import { Mail, Github, Send, Phone, MapPin } from 'lucide-vue-next'
 import AnimatedSection from './AnimatedSection.vue'
 import { useI18n } from '../i18n.js'
 
 const contact = useI18n('contact')
 
 const items = [
-  { icon: Mail, value: 'hello@yourdomain.dev', href: 'mailto:hello@yourdomain.dev' },
-  { icon: Github, value: 'github.com/YOURUSERNAME', href: 'https://github.com/YOURUSERNAME' },
-  { icon: Linkedin, value: 'linkedin.com/in/YOURUSERNAME', href: 'https://linkedin.com/in/YOURUSERNAME' },
+  { icon: Mail, value: 'astroid198@gmail.com', href: 'mailto:astroid198@gmail.com' },
+  { icon: Github, value: 'github.com/Andres-de-Fonoliousa', href: 'https://github.com/Andres-de-Fonoliousa' },
+  { icon: Send, value: 't.me/Zenin0o', href: 'https://t.me/Zenin0o' },
+  { icon: Phone, value: contact.value.phone, href: 'https://wa.me/963982749452' },
   { icon: MapPin, value: contact.value.location, href: '#' },
 ]
 </script>
@@ -32,13 +33,13 @@ const items = [
       <AnimatedSection :delay="0.1">
         <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
-            href="mailto:hello@yourdomain.dev?subject=Hiring%20—%20Full-Stack%20Developer"
+            href="mailto:astroid198@gmail.com?subject=Hiring%20—%20Full-Stack%20Developer"
             class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-10 py-5 text-lg font-semibold text-navy shadow-btn transition-all duration-300 hover:-translate-y-0.5 hover:bg-indigo hover:text-white hover:shadow-lift sm:w-auto"
           >
             {{ contact.cta1 }}
           </a>
           <a
-            href="https://github.com/YOURUSERNAME"
+            href="https://github.com/Andres-de-Fonoliousa"
             target="_blank"
             rel="noopener"
             class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/5 px-10 py-5 text-lg font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/10 sm:w-auto"

@@ -91,13 +91,13 @@ onBeforeUnmount(() => timers.forEach(clearTimeout))
 
       <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
-          href="mailto:hello@yourdomain.dev"
+          href="mailto:astroid198@gmail.com"
           class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-navy px-8 py-4 font-semibold text-white shadow-btn transition-all duration-300 hover:-translate-y-0.5 hover:bg-indigo hover:shadow-lift sm:w-auto"
         >
           {{ hero.cta1 }}
         </a>
         <a
-          href="https://github.com/YOURUSERNAME"
+          href="https://github.com/Andres-de-Fonoliousa"
           target="_blank"
           rel="noopener"
           class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-line bg-white px-8 py-4 font-semibold text-primary shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo/50 hover:shadow-lift sm:w-auto"
