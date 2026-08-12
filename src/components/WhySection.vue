@@ -18,7 +18,7 @@ const backgrounds = ['bg-cyan/10', 'bg-green-400/10', 'bg-violet/10', 'bg-amber-
         <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-cyan">
           {{ why.label }}
         </p>
-        <h2 class="text-3xl font-bold text-white md:text-4xl">{{ why.heading }}</h2>
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">{{ why.heading }}</h2>
       </AnimatedSection>
 
       <div class="mt-12 grid gap-6 sm:grid-cols-2">
@@ -30,7 +30,7 @@ const backgrounds = ['bg-cyan/10', 'bg-green-400/10', 'bg-violet/10', 'bg-amber-
             >
               <component :is="icons[i]" :size="26" :class="colors[i]" />
             </div>
-            <h3 class="mb-3 text-xl font-semibold text-white">{{ card.title }}</h3>
+            <h3 class="font-display mb-3 text-xl font-bold leading-snug tracking-tight text-white">{{ card.title }}</h3>
             <p class="leading-relaxed text-secondary">{{ card.body }}</p>
           </GlassCard>
         </AnimatedSection>

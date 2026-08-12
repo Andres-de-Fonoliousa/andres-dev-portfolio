@@ -8,14 +8,14 @@ const about = useI18n('about')
 </script>
 
 <template>
-  <section id="about" class="bg-bg2 px-4 py-24 sm:px-6">
+  <section id="about" class="px-4 py-24 sm:px-6">
     <div class="mx-auto max-w-[1000px]">
       <AnimatedSection class="text-center">
         <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-cyan">
           {{ about.label }}
         </p>
-        <h2 class="text-3xl font-bold text-white md:text-5xl">{{ about.heading }}</h2>
-        <p class="mx-auto mt-5 max-w-xl leading-relaxed text-secondary">{{ about.p1 }}</p>
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">{{ about.heading }}</h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-secondary">{{ about.p1 }}</p>
       </AnimatedSection>
 
       <AnimatedSection :delay="0.1" class="mt-12">

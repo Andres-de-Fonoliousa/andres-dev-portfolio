@@ -15,7 +15,7 @@ const open = ref(0)
         <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-cyan">
           {{ faq.label }}
         </p>
-        <h2 class="text-3xl font-bold text-white md:text-4xl">{{ faq.heading }}</h2>
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">{{ faq.heading }}</h2>
       </AnimatedSection>
 
       <div class="mt-12 space-y-3">
@@ -31,7 +31,7 @@ const open = ref(0)
             :class="open === i ? 'text-cyan' : 'text-primary'"
             @click="open = open === i ? -1 : i"
           >
-            <span class="font-medium">{{ item.q }}</span>
+            <span class="font-semibold">{{ item.q }}</span>
             <Plus :size="18" class="faq-icon shrink-0 text-muted" />
           </button>
           <div class="faq-a">

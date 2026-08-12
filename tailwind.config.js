@@ -18,9 +18,6 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       boxShadow: {
-        'glow-sm': '0 0 20px rgba(34,211,238,0.15)',
-        'glow-md': '0 0 40px rgba(34,211,238,0.2)',
-        'glow-accent': '0 0 60px rgba(167,139,250,0.15)',
         card: '0 4px 24px rgba(0,0,0,0.4)',
       },
       transitionTimingFunction: {

@@ -24,7 +24,7 @@ const statusStyles = [
         <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-cyan">
           {{ work.label }}
         </p>
-        <h2 class="text-3xl font-bold text-white md:text-5xl">
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
           {{ work.heading1 }}<br class="hidden sm:block" />
           {{ work.heading2 }}
         </h2>
@@ -38,7 +38,7 @@ const statusStyles = [
           class="rounded-full px-5 py-2.5 font-mono text-xs transition-all duration-300"
           :class="
             active === i
-              ? 'bg-cyan font-semibold text-black shadow-glow-sm'
+              ? 'border border-cyan/50 font-semibold text-cyan'
               : 'border border-white/10 text-secondary hover:border-cyan/40 hover:text-cyan'
           "
         >
@@ -53,7 +53,7 @@ const statusStyles = [
               <p class="font-mono text-xs uppercase tracking-[0.2em] text-cyan">
                 {{ current.tag }}
               </p>
-              <h3 class="mt-3 text-2xl font-bold text-white md:text-3xl">{{ current.title }}</h3>
+              <h3 class="font-display mt-3 text-2xl font-bold leading-snug tracking-tight text-white md:text-3xl">{{ current.title }}</h3>
               <p class="mt-4 leading-relaxed text-secondary">{{ current.desc }}</p>
               <ul v-if="current.points.length" class="mt-6 space-y-2 font-mono text-sm text-secondary">
                 <li v-for="point in current.points" :key="point" class="flex items-start gap-2">
@@ -148,10 +148,8 @@ const statusStyles = [
                   <div
                     class="relative flex h-64 items-center justify-center bg-gradient-to-br from-[#0d0d1a] to-[#0a0a0f] sm:h-72"
                   >
-                    <div class="absolute h-24 w-24 rounded-full bg-cyan/20 blur-2xl" aria-hidden="true"></div>
-                    <div class="absolute h-16 w-16 rounded-full bg-violet/20 blur-2xl" aria-hidden="true"></div>
                     <div
-                      class="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-violet/30 bg-violet/10 shadow-glow-accent"
+                      class="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-violet/30 bg-violet/10"
                     >
                       <p class="font-mono text-4xl text-violet">Y</p>
                     </div>

@@ -18,14 +18,14 @@ const dots = {
 </script>
 
 <template>
-  <section id="stack" class="bg-bg2 px-4 py-24 sm:px-6">
+  <section id="stack" class="px-4 py-24 sm:px-6">
     <div class="mx-auto max-w-[1200px]">
       <AnimatedSection class="text-center">
         <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-cyan">
           {{ stack.label }}
         </p>
-        <h2 class="text-3xl font-bold text-white md:text-4xl">{{ stack.heading }}</h2>
-        <p class="mx-auto mt-4 max-w-2xl leading-relaxed text-secondary">{{ stack.sub }}</p>
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">{{ stack.heading }}</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-secondary">{{ stack.sub }}</p>
       </AnimatedSection>
 
       <div class="mt-12 flex flex-wrap justify-center gap-4">
@@ -35,7 +35,7 @@ const dots = {
           :delay="(i % 4) * 0.1"
         >
           <div
-            class="badge-glow flex items-center gap-3 rounded-lg border border-white/[0.06] bg-[#111118] px-6 py-4 transition-all duration-300 hover:border-cyan/30"
+            class="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-[#111118] px-6 py-4 transition-all duration-300 hover:border-white/20"
           >
             <span class="h-2 w-2 rounded-full" :style="{ backgroundColor: dots[tech.name] }"></span>
             <span class="font-mono text-sm text-primary">{{ tech.name }}</span>

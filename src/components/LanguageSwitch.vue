@@ -8,27 +8,27 @@ import { lang, setLang } from '../i18n.js'
     role="group"
     aria-label="Language"
   >
-    <button
-      @click="setLang('en')"
-      :class="
-        lang === 'en'
-          ? 'bg-cyan font-semibold text-black shadow-glow-sm'
-          : 'text-secondary hover:text-primary'
-      "
-      class="rounded-full px-4 py-1.5 font-mono text-xs transition-all duration-300"
-    >
-      EN
-    </button>
-    <button
-      @click="setLang('ar')"
-      :class="
-        lang === 'ar'
-          ? 'bg-cyan font-semibold text-black shadow-glow-sm'
-          : 'text-secondary hover:text-primary'
-      "
-      class="rounded-full px-4 py-1.5 font-mono text-xs transition-all duration-300"
-    >
-      عربي
-    </button>
+<button
+        @click="setLang('en')"
+        :class="
+          lang === 'en'
+            ? 'border border-cyan/50 font-semibold text-cyan'
+            : 'border border-transparent text-secondary hover:text-primary'
+        "
+        class="rounded-full px-4 py-1.5 font-mono text-xs transition-all duration-300"
+      >
+        EN
+      </button>
+      <button
+        @click="setLang('ar')"
+        :class="
+          lang === 'ar'
+            ? 'border border-cyan/50 font-semibold text-cyan'
+            : 'border border-transparent text-secondary hover:text-primary'
+        "
+        class="rounded-full px-4 py-1.5 font-mono text-xs transition-all duration-300"
+      >
+        عربي
+      </button>
   </div>
 </template>

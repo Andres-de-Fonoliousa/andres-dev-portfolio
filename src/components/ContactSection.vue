@@ -14,18 +14,18 @@ const items = [
 </script>
 
 <template>
-  <section id="contact" class="bg-bg2 px-4 py-24 sm:px-6">
+  <section id="contact" class="px-4 py-24 sm:px-6">
     <div class="mx-auto max-w-[800px] text-center">
       <AnimatedSection>
-        <h2 class="text-3xl font-bold text-white md:text-5xl">{{ contact.heading }}</h2>
-        <p class="mx-auto mt-5 max-w-xl leading-relaxed text-secondary">{{ contact.sub }}</p>
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">{{ contact.heading }}</h2>
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-secondary">{{ contact.sub }}</p>
       </AnimatedSection>
 
       <AnimatedSection :delay="0.1">
         <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="mailto:hello@yourdomain.dev?subject=Hiring%20—%20Full-Stack%20Developer"
-            class="w-full rounded-full bg-cyan px-10 py-5 text-lg font-bold text-black transition-all duration-300 hover:scale-[1.02] hover:bg-cyan-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)] sm:w-auto"
+            class="w-full rounded-full border border-white/10 px-10 py-5 text-lg font-semibold text-white transition-all duration-300 hover:border-cyan/50 hover:text-cyan sm:w-auto"
           >
             {{ contact.cta1 }}
           </a>
@@ -33,7 +33,7 @@ const items = [
             href="https://github.com/YOURUSERNAME"
             target="_blank"
             rel="noopener"
-            class="w-full rounded-full border-2 border-violet px-10 py-5 text-lg font-bold text-violet transition-all duration-300 hover:bg-violet hover:text-black sm:w-auto"
+            class="w-full rounded-full border border-white/10 px-10 py-5 text-lg font-semibold text-white transition-all duration-300 hover:border-cyan/50 hover:text-cyan sm:w-auto"
           >
             {{ contact.cta2 }}
           </a>

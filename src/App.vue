@@ -14,8 +14,9 @@ import MarqueeStrip from './components/MarqueeStrip.vue'
 
 <template>
   <div class="relative min-h-screen bg-bg font-body text-primary antialiased">
-    <div class="orb orb-cyan" aria-hidden="true"></div>
-    <div class="orb orb-violet" aria-hidden="true"></div>
+    <div class="bg-contours" aria-hidden="true"></div>
+    <div class="bg-dots" aria-hidden="true"></div>
+    <div class="bg-spot" aria-hidden="true"></div>
     <div class="noise-overlay" aria-hidden="true"></div>
 
     <LanguageSwitch />
