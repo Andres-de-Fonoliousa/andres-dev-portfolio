@@ -45,14 +45,19 @@ const hero = useI18n('hero')
     </AnimatedSection>
 
     <AnimatedSection :delay="0.15" class="mx-auto mt-12 max-w-lg text-start">
-      <TerminalWindow title="~/deploy">
-        <p class="text-slate-400">
-          <span class="code-kw">$</span> git clone high-leverage-system
-        </p>
-        <p class="text-slate-400">
-          <span class="code-kw">$</span> npm run ship-in-7-days
-        </p>
-        <p class="mt-2 text-green-400">{{ hero.success }}</p>
+      <TerminalWindow title="~/projects">
+        <div v-for="(line, i) in hero.terminal" :key="i" class="text-sm">
+          <p v-if="!line.result" class="text-slate-400" v-html="line.text"></p>
+          <p v-else>
+            <span
+              class="rounded px-1.5 py-0.5 text-[10px] font-semibold"
+              :class="line.ok ? 'bg-green-400/10 text-green-400' : 'bg-cyan/10 text-cyan'"
+            >
+              {{ line.result }}
+            </span>
+            <span class="ms-2 text-slate-300">{{ line.text }}</span>
+          </p>
+        </div>
       </TerminalWindow>
     </AnimatedSection>
   </section>

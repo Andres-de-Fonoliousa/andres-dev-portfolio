@@ -1,9 +1,9 @@
 <script setup>
 import HeroSection from './components/HeroSection.vue'
-import GapSection from './components/GapSection.vue'
+import AboutSection from './components/AboutSection.vue'
 import WorkSection from './components/WorkSection.vue'
 import StackSection from './components/StackSection.vue'
-import ForSection from './components/ForSection.vue'
+import WhySection from './components/WhySection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FaqSection from './components/FaqSection.vue'
 import FooterSection from './components/FooterSection.vue'
@@ -22,10 +22,10 @@ import LanguageSwitch from './components/LanguageSwitch.vue'
 
     <main class="relative z-10">
       <HeroSection />
-      <GapSection />
+      <AboutSection />
       <WorkSection />
       <StackSection />
-      <ForSection />
+      <WhySection />
       <ContactSection />
       <FaqSection />
     </main>

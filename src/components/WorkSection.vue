@@ -1,12 +1,15 @@
 <script setup>
-import { Check, Target, Server, Layout, Plug, Rocket } from 'lucide-vue-next'
+import { Check, ExternalLink } from 'lucide-vue-next'
 import AnimatedSection from './AnimatedSection.vue'
-import GlassCard from './GlassCard.vue'
 import { useI18n } from '../i18n.js'
 
 const work = useI18n('work')
 
-const sprintIcons = [Target, Server, Server, Layout, Layout, Plug, Rocket]
+const statusStyles = [
+  'border-green-400/20 bg-green-400/10 text-green-400',
+  'border-green-400/20 bg-green-400/10 text-green-400',
+  'border-white/10 bg-white/5 text-muted',
+]
 </script>
 
 <template>
@@ -22,7 +25,7 @@ const sprintIcons = [Target, Server, Server, Layout, Layout, Plug, Rocket]
         </h2>
       </AnimatedSection>
 
-      <!-- PROJECT 1 -->
+      <!-- PROJECT 1: CoreS -->
       <div class="mt-16 grid items-center gap-10 md:grid-cols-2 md:gap-12">
         <AnimatedSection>
           <p class="font-mono text-xs uppercase tracking-[0.2em] text-cyan">{{ work.p1.tag }}</p>
@@ -34,14 +37,21 @@ const sprintIcons = [Target, Server, Server, Layout, Layout, Plug, Rocket]
               {{ point }}
             </li>
           </ul>
-          <span
-            class="mt-6 inline-block rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 font-mono text-xs text-amber-400"
-          >
-            {{ work.p1.status }}
-          </span>
-          <div class="mt-6">
-            <a href="#" class="link-underline font-mono text-sm text-cyan">
-              {{ work.p1.link }} →
+          <div class="mt-6 flex flex-wrap items-center gap-4">
+            <span
+              class="inline-block rounded-full border px-3 py-1 font-mono text-xs"
+              :class="statusStyles[0]"
+            >
+              {{ work.p1.status }}
+            </span>
+            <a
+              :href="work.p1.href"
+              target="_blank"
+              rel="noopener"
+              class="link-underline inline-flex items-center gap-1.5 font-mono text-sm text-cyan"
+            >
+              {{ work.p1.link }}
+              <ExternalLink :size="14" />
             </a>
           </div>
         </AnimatedSection>
@@ -54,12 +64,12 @@ const sprintIcons = [Target, Server, Server, Layout, Layout, Plug, Rocket]
                 <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
                 <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
                 <span class="ms-2 flex-1 truncate rounded bg-white/5 px-3 py-0.5 text-center font-mono text-[11px] text-muted">
-                  app.storefronts.io/admin
+                  corexgaming.duckdns.org
                 </span>
               </div>
               <img
                 src="/saas-dashboard.jpeg"
-                alt="Multi-tenant admin dashboard"
+                alt="CoreS e-commerce admin dashboard"
                 class="h-64 w-full object-cover object-top sm:h-72"
                 loading="lazy"
               />
@@ -67,16 +77,16 @@ const sprintIcons = [Target, Server, Server, Layout, Layout, Plug, Rocket]
             <div
               class="absolute -bottom-6 end-2 w-72 rounded-lg border border-white/10 bg-[#050507] p-4 font-mono text-xs text-cyan shadow-xl sm:-end-4"
             >
-              <p class="text-slate-500">// Tenant resolution middleware</p>
-              <p><span class="code-kw">$tenant</span> = <span class="code-fn">Tenant::findByDomain</span>(</p>
-              <p class="ps-4"><span class="code-fn">request</span>()-><span class="code-fn">getHost</span>()</p>
-              <p>);</p>
+              <p class="text-slate-500">// Route: dispatch whether supported</p>
+              <p><span class="code-kw">Route</span>::<span class="code-fn">get</span>(<span class="code-str">'/api/products'</span>,</p>
+              <p class="ps-4"><span class="code-fn">ProductController</span>::<span class="code-fn">class</span>);</p>
+              <p class="mt-2 text-green-400">200 OK — serving live requests</p>
             </div>
           </div>
         </AnimatedSection>
       </div>
 
-      <!-- PROJECT 2 -->
+      <!-- PROJECT 2: Telegram bot -->
       <div class="mt-24 grid items-center gap-10 md:grid-cols-2 md:gap-12">
         <AnimatedSection class="md:order-2">
           <p class="font-mono text-xs uppercase tracking-[0.2em] text-cyan">{{ work.p2.tag }}</p>
@@ -89,15 +99,11 @@ const sprintIcons = [Target, Server, Server, Layout, Layout, Plug, Rocket]
             </li>
           </ul>
           <span
-            class="mt-6 inline-block rounded-full border border-amber-400/20 bg-amber-400/10 px-3 py-1 font-mono text-xs text-amber-400"
+            class="mt-6 inline-block rounded-full border px-3 py-1 font-mono text-xs"
+            :class="statusStyles[1]"
           >
             {{ work.p2.status }}
           </span>
-          <div class="mt-6">
-            <a href="#" class="link-underline font-mono text-sm text-cyan">
-              {{ work.p2.link }} →
-            </a>
-          </div>
         </AnimatedSection>
 
         <AnimatedSection :delay="0.15" class="md:order-1">
@@ -127,50 +133,40 @@ const sprintIcons = [Target, Server, Server, Layout, Layout, Plug, Rocket]
         </AnimatedSection>
       </div>
 
-      <!-- PROJECT 3 -->
-      <AnimatedSection class="mt-24">
-        <GlassCard class="p-8 text-center sm:p-12">
+      <!-- PROJECT 3: 3D viewer -->
+      <div class="mt-24 grid items-center gap-10 md:grid-cols-2 md:gap-12">
+        <AnimatedSection>
           <p class="font-mono text-xs uppercase tracking-[0.2em] text-cyan">{{ work.p3.tag }}</p>
           <h3 class="mt-3 text-2xl font-bold text-white md:text-3xl">{{ work.p3.title }}</h3>
-          <p class="mx-auto mt-4 max-w-2xl leading-relaxed text-secondary">{{ work.p3.desc }}</p>
+          <p class="mt-4 leading-relaxed text-secondary">{{ work.p3.desc }}</p>
+          <span
+            class="mt-6 inline-block rounded-full border px-3 py-1 font-mono text-xs"
+            :class="statusStyles[2]"
+          >
+            {{ work.p3.status }}
+          </span>
+        </AnimatedSection>
 
-          <div class="relative mx-auto mt-10 hidden max-w-3xl md:block">
-            <div class="track-line" aria-hidden="true"></div>
-            <div class="relative flex justify-between">
-              <div
-                v-for="(item, i) in work.sprint"
-                :key="item.day"
-                class="flex w-24 flex-col items-center"
-              >
-                <div
-                  class="relative z-10 flex h-14 w-14 items-center justify-center rounded-full border border-white/10 bg-[#0a0a0f]"
-                >
-                  <component :is="sprintIcons[i]" :size="22" :class="i === 6 ? 'text-green-400' : 'text-cyan'" />
-                </div>
-                <p class="mt-3 font-mono text-[10px] uppercase tracking-wider text-muted">
-                  {{ item.day }}
-                </p>
-                <p class="text-sm text-primary">{{ item.label }}</p>
+        <AnimatedSection :delay="0.15">
+          <div class="overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0f] shadow-card">
+            <div class="flex items-center gap-2 border-b border-white/10 bg-[#0f0f16] px-4 py-2.5">
+              <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
+              <span class="ms-2 flex-1 truncate rounded bg-white/5 px-3 py-0.5 text-center font-mono text-[11px] text-muted">
+                three.js + MediaPipe hand tracking
+              </span>
+            </div>
+            <div class="relative flex h-64 items-center justify-center bg-gradient-to-br from-[#0d0d1a] to-[#0a0a0f] sm:h-72">
+              <div class="absolute h-24 w-24 rounded-full bg-cyan/20 blur-2xl" aria-hidden="true"></div>
+              <div class="absolute h-16 w-16 rounded-full bg-violet/20 blur-2xl" aria-hidden="true"></div>
+              <div class="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-violet/30 bg-violet/10 shadow-glow-accent">
+                <p class="font-mono text-4xl text-violet">Y</p>
               </div>
             </div>
           </div>
-
-          <div class="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2 md:hidden">
-            <div
-              v-for="(item, i) in work.sprint"
-              :key="item.day"
-              class="flex items-center gap-2 rounded-full border border-white/10 bg-[#0a0a0f] px-4 py-2"
-            >
-              <component :is="sprintIcons[i]" :size="14" class="text-cyan" />
-              <span class="font-mono text-xs text-primary">{{ item.day }}: {{ item.label }}</span>
-            </div>
-          </div>
-
-          <blockquote class="mx-auto mt-10 max-w-xl border-s-2 border-cyan ps-4 text-start italic text-secondary">
-            "{{ work.p3.quote }}"
-          </blockquote>
-        </GlassCard>
-      </AnimatedSection>
+        </AnimatedSection>
+      </div>
     </div>
   </section>
 </template>

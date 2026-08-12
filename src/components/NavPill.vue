@@ -9,9 +9,9 @@ const nav = useI18n('nav')
   <nav
     class="fixed bottom-4 left-1/2 z-40 hidden -translate-x-1/2 items-center gap-6 rounded-full border border-white/10 bg-bg/80 px-6 py-3 font-mono text-xs tracking-wide text-secondary backdrop-blur-xl sm:flex"
   >
+    <a href="#about" class="link-underline transition-colors hover:text-cyan">{{ nav.about }}</a>
     <a href="#work" class="link-underline transition-colors hover:text-cyan">{{ nav.work }}</a>
     <a href="#stack" class="link-underline transition-colors hover:text-cyan">{{ nav.stack }}</a>
-    <a href="#for" class="link-underline transition-colors hover:text-cyan">{{ nav.hire }}</a>
     <a href="#faq" class="link-underline transition-colors hover:text-cyan">{{ nav.faq }}</a>
     <a
       href="mailto:hello@yourdomain.dev"

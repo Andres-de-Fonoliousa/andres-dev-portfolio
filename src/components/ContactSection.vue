@@ -9,7 +9,7 @@ const items = [
   { icon: Mail, value: 'hello@yourdomain.dev', href: 'mailto:hello@yourdomain.dev' },
   { icon: Github, value: 'github.com/YOURUSERNAME', href: 'https://github.com/YOURUSERNAME' },
   { icon: Linkedin, value: 'linkedin.com/in/YOURUSERNAME', href: 'https://linkedin.com/in/YOURUSERNAME' },
-  { icon: MapPin, value: 'Remote • UTC+3', href: '#' },
+  { icon: MapPin, value: contact.value.location, href: '#' },
 ]
 </script>
 
@@ -24,13 +24,15 @@ const items = [
       <AnimatedSection :delay="0.1">
         <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="mailto:hello@yourdomain.dev?subject=Project%20Sprint%20Inquiry"
+            href="mailto:hello@yourdomain.dev?subject=Hiring%20—%20Full-Stack%20Developer"
             class="w-full rounded-full bg-cyan px-10 py-5 text-lg font-bold text-black transition-all duration-300 hover:scale-[1.02] hover:bg-cyan-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.4)] sm:w-auto"
           >
             {{ contact.cta1 }}
           </a>
           <a
-            href="mailto:hello@yourdomain.dev?subject=Full-Time%20Role%20Inquiry"
+            href="https://github.com/YOURUSERNAME"
+            target="_blank"
+            rel="noopener"
             class="w-full rounded-full border-2 border-violet px-10 py-5 text-lg font-bold text-violet transition-all duration-300 hover:bg-violet hover:text-black sm:w-auto"
           >
             {{ contact.cta2 }}
