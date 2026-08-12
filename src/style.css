@@ -176,3 +176,55 @@ body {
 [dir='rtl'] .link-underline::after {
   transform-origin: right;
 }
+
+/* ---- Marquee ---- */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: auto;
+  }
+}
+
+/* ---- Typing terminal cursor ---- */
+.type-cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1.05em;
+  background: #22d3ee;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+/* ---- Tab content transition ---- */
+.card-enter-active,
+.card-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.card-enter-from {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.card-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* ---- Diagram arrows ---- */
+.diagram-node {
+  transition: all 0.3s ease;
+}
+.diagram-node:hover {
+  border-color: rgba(34, 211, 238, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.12);
+}

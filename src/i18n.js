@@ -26,9 +26,16 @@ export const messages = {
     about: {
       label: 'About',
       heading: 'Who I am',
-      p1: 'I build complete products, not fragments. CoreS — my e-commerce platform — began as one idea and became a full system: database design, REST API, Redis caching, admin dashboard, deployment on my own Ubuntu server, and a Telegram bot wired into it.',
-      p2: 'Since then I have designed more: async bot systems, WebGL interfaces, and the next stage of CoreS — a multi-tenant platform running many stores from a single codebase.',
+      p1: 'I build complete products, not fragments. CoreS began as one idea and became a full system — this is how it goes together:',
       p3: 'The standard I hold: code that reads clearly, features owned to the last deploy, and communication that keeps everyone oriented.',
+      diagram: [
+        { name: 'Database', note: 'Schema & migrations' },
+        { name: 'REST API', note: 'Laravel backend' },
+        { name: 'Redis', note: 'Cache & queues' },
+        { name: 'Dashboard', note: 'Vue 3 + Tailwind' },
+        { name: 'Deploy', note: 'Ubuntu server' },
+        { name: 'Telegram Bot', note: 'Orders & alerts' },
+      ],
       chips: ['End-to-end builds', 'REST APIs', 'Async systems', 'Multi-tenancy', 'Self-hosted infra', 'UTC+3 remote'],
     },
     skills: {
@@ -167,6 +174,7 @@ export const messages = {
       linkedin: 'LinkedIn',
       email: 'Email',
     },
+    marquee: ['Laravel', 'Vue 3', 'Python', 'Tailwind CSS', 'REST APIs', 'Redis', 'MySQL', 'Async bots', 'Ubuntu', 'Docker', 'Git'],
   },
 
   ar: {
@@ -194,9 +202,16 @@ export const messages = {
     about: {
       label: 'عنّي',
       heading: 'من أنا',
-      p1: 'أبني منتجات كاملة، لا أجزاء متفرقة. بدأ CoreS — منصة التجارة الإلكترونية الخاصة بي — فكرة واحدة وانتهى نظاماً متكاملاً: تصميم قاعدة البيانات، واجهة REST API، تخزين Redis، لوحة تحكم إدارية، نشر على خادم Ubuntu خاص بي، وبوت تيليجرام مرتبط به.',
-      p2: 'ومنذ ذلك الحين صمّمت المزيد: أنظمة بوتات غير متزامنة، واجهات WebGL، والمرحلة التالية من CoreS — منصة متعددة المتاجر تشغّل متاجر عدة من قاعدة كود واحدة.',
+      p1: 'أبني منتجات كاملة، لا أجزاء متفرقة. بدأ CoreS فكرة واحدة وانتهى نظاماً متكاملاً — وهكذا يتكوّن:',
       p3: 'المعيار الذي ألتزم به: كود يُقرأ بوضوح، ميزات مملوكة حتى آخر نشر، وتواصل يبقي الجميع على علم.',
+      diagram: [
+        { name: 'قاعدة البيانات', note: 'النظام والهجرات' },
+        { name: 'REST API', note: 'خلفية Laravel' },
+        { name: 'Redis', note: 'تخزين وتوافيق' },
+        { name: 'لوحة التحكم', note: 'Vue 3 + Tailwind' },
+        { name: 'النشر', note: 'خادم Ubuntu' },
+        { name: 'بوت تيليجرام', note: 'الطلبات والتنبيهات' },
+      ],
       chips: ['بناء متكامل', 'REST APIs', 'أنظمة غير متزامنة', 'تعددية المتاجر', 'بنية تحتية ذاتية', 'عن بُعد • UTC+3'],
     },
     skills: {
@@ -335,6 +350,7 @@ export const messages = {
       linkedin: 'لينكدإن',
       email: 'البريد',
     },
+    marquee: [' Laravel', 'Vue 3', 'Python', 'Tailwind CSS', 'REST APIs', 'Redis', 'MySQL', 'بوتات غير متزامنة', 'Ubuntu', 'Docker', 'Git'],
   },
 }
 

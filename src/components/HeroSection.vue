@@ -1,9 +1,60 @@
 <script setup>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import AnimatedSection from './AnimatedSection.vue'
 import TerminalWindow from './TerminalWindow.vue'
 import { useI18n } from '../i18n.js'
 
 const hero = useI18n('hero')
+
+const shown = ref([])
+const current = ref('')
+const typing = ref(false)
+let timers = []
+
+const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+function buildLines() {
+  const lines = [{ kind: 'cmd', text: '$ ls ~/repos' }]
+  hero.value.terminal.forEach((l) => {
+    if (l.name) lines.push({ kind: 'repo', name: l.name, note: l.note })
+  })
+  return lines
+}
+
+function typeLoop() {
+  shown.value = []
+  const lines = buildLines()
+  if (reduceMotion) {
+    shown.value = lines
+    typing.value = false
+    return
+  }
+  typeLine(lines, 0)
+}
+
+function typeLine(lines, i) {
+  if (i >= lines.length) {
+    timers.push(setTimeout(typeLoop, 2800))
+    return
+  }
+  typing.value = true
+  let chars = ''
+  const speed = i === 0 ? 34 : 15
+  const step = () => {
+    chars = lines[i].kind === 'cmd' ? '$ ls ~/repos'.slice(0, chars.length + 1) : chars + lines[i].name[chars.length]
+    current.value = chars
+    if (chars.length < (lines[i].kind === 'cmd' ? '$ ls ~/repos'.length : lines[i].name.length)) {
+      timers.push(setTimeout(step, speed))
+    } else {
+      shown.value.push(lines[i])
+      timers.push(setTimeout(() => typeLine(lines, i + 1), i === 0 ? 420 : 150))
+    }
+  }
+  step()
+}
+
+onMounted(typeLoop)
+onBeforeUnmount(() => timers.forEach(clearTimeout))
 </script>
 
 <template>
@@ -13,7 +64,7 @@ const hero = useI18n('hero')
         {{ hero.eyebrow }}
       </p>
 
-      <h1 class="text-4xl font-bold leading-tight text-white md:text-6xl">
+      <h1 class="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
         <template v-for="(line, i) in hero.lines" :key="i">
           {{ line }}<br />
         </template>
@@ -46,11 +97,18 @@ const hero = useI18n('hero')
 
     <AnimatedSection :delay="0.15" class="mx-auto mt-12 max-w-lg text-start">
       <TerminalWindow title="~/projects">
-        <div v-for="(line, i) in hero.terminal" :key="i" class="text-sm">
-          <p v-if="line.text && !line.name" class="text-slate-400" v-html="line.text"></p>
-          <p v-else-if="line.name" class="flex flex-wrap items-center gap-x-2">
-            <span class="text-cyan">{{ line.name }}</span>
-            <span class="text-slate-500">{{ line.note }}</span>
+        <div class="space-y-1 font-mono text-sm">
+          <template v-for="(line, i) in shown" :key="i">
+            <p v-if="line.kind === 'cmd'" class="text-slate-400">
+              <span class="code-kw">$</span>{{ line.text.slice(1) }}
+            </p>
+            <p v-else class="flex flex-wrap items-baseline gap-x-2">
+              <span class="text-cyan">{{ line.name }}</span>
+              <span class="text-slate-500">{{ line.note }}</span>
+            </p>
+          </template>
+          <p v-if="typing || !shown.length" class="text-slate-300">
+            <span v-if="shown.length || current" class="code-kw">$ </span>{{ current }}<span class="type-cursor"></span>
           </p>
         </div>
       </TerminalWindow>

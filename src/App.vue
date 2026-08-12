@@ -9,6 +9,7 @@ import FaqSection from './components/FaqSection.vue'
 import FooterSection from './components/FooterSection.vue'
 import NavPill from './components/NavPill.vue'
 import LanguageSwitch from './components/LanguageSwitch.vue'
+import MarqueeStrip from './components/MarqueeStrip.vue'
 </script>
 
 <template>
@@ -22,6 +23,7 @@ import LanguageSwitch from './components/LanguageSwitch.vue'
 
     <main class="relative z-10">
       <HeroSection />
+      <MarqueeStrip />
       <AboutSection />
       <WorkSection />
       <StackSection />
