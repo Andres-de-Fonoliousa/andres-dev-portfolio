@@ -58,13 +58,27 @@ onBeforeUnmount(() => timers.forEach(clearTimeout))
 </script>
 
 <template>
-  <section id="hero" class="px-4 pt-32 pb-24 text-center sm:px-6 md:pt-40">
-    <AnimatedSection class="mx-auto max-w-[900px]">
-      <p class="mb-6 font-mono text-xs uppercase tracking-[0.25em] text-cyan">
+  <section id="hero" class="relative overflow-hidden px-4 pb-32 pt-32 text-center sm:px-6 md:pt-40">
+    <div class="absolute inset-0 aurora" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <picture>
+        <source srcset="/hero-wave-desktop.png" media="(min-width: 768px)" />
+        <img
+          src="/hero-wave-mobile.png"
+          alt=""
+          class="h-full w-full object-cover object-top opacity-70"
+          fetchpriority="low"
+        />
+      </picture>
+    </div>
+
+    <AnimatedSection class="relative mx-auto max-w-[860px]">
+      <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/80 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-indigo shadow-card backdrop-blur-sm">
+        <span class="h-1.5 w-1.5 rounded-full bg-lime"></span>
         {{ hero.eyebrow }}
       </p>
 
-      <h1 class="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+      <h1 class="font-display text-4xl font-bold leading-[1.05] tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
         <template v-for="(line, i) in hero.lines" :key="i">
           {{ line }}<br />
         </template>
@@ -75,10 +89,10 @@ onBeforeUnmount(() => timers.forEach(clearTimeout))
         {{ hero.sub }}
       </p>
 
-      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a
           href="mailto:hello@yourdomain.dev"
-          class="w-full rounded-full border border-white/10 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-cyan/50 hover:text-cyan sm:w-auto"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-navy px-8 py-4 font-semibold text-white shadow-btn transition-all duration-300 hover:-translate-y-0.5 hover:bg-indigo hover:shadow-lift sm:w-auto"
         >
           {{ hero.cta1 }}
         </a>
@@ -86,16 +100,16 @@ onBeforeUnmount(() => timers.forEach(clearTimeout))
           href="https://github.com/YOURUSERNAME"
           target="_blank"
           rel="noopener"
-          class="w-full rounded-full border border-white/10 px-8 py-4 text-white transition-all duration-300 hover:border-cyan/50 hover:text-cyan sm:w-auto"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-line bg-white px-8 py-4 font-semibold text-primary shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo/50 hover:shadow-lift sm:w-auto"
         >
           {{ hero.cta2 }}
         </a>
       </div>
 
-      <p class="mt-6 font-mono text-xs text-muted">{{ hero.meta }}</p>
+      <p class="mt-6 font-mono text-xs tabular-nums tracking-wide text-muted">{{ hero.meta }}</p>
     </AnimatedSection>
 
-    <AnimatedSection :delay="0.15" class="mx-auto mt-12 max-w-lg text-start">
+    <AnimatedSection :delay="0.1" class="relative mx-auto mt-14 max-w-2xl text-start">
       <TerminalWindow title="~/projects">
         <div class="h-40 space-y-1 overflow-hidden font-mono text-sm">
           <template v-for="(line, i) in shown" :key="i">
@@ -103,7 +117,7 @@ onBeforeUnmount(() => timers.forEach(clearTimeout))
               <span class="code-kw">$</span>{{ line.text.slice(1) }}
             </p>
             <p v-else class="flex items-baseline gap-x-2 overflow-hidden whitespace-nowrap">
-              <span class="shrink-0 text-cyan">{{ line.name }}</span>
+              <span class="shrink-0 text-sky-300">{{ line.name }}</span>
               <span class="truncate text-slate-500">{{ line.note }}</span>
             </p>
           </template>
@@ -113,5 +127,14 @@ onBeforeUnmount(() => timers.forEach(clearTimeout))
         </div>
       </TerminalWindow>
     </AnimatedSection>
+
+    <div class="hero-wave-wrap" aria-hidden="true">
+      <svg class="hero-wave" viewBox="0 0 1200 100" fill="none" preserveAspectRatio="none">
+        <path class="point" d="M0 22 C 80 14 160 30 240 22 S 400 10 480 22 S 640 34 720 22 S 880 12 960 22 S 1120 34 1200 22" />
+        <path d="M0 42 C 100 32 200 52 300 42 S 500 30 600 42 S 800 54 900 42 S 1100 30 1200 42" />
+        <path d="M0 62 C 120 54 240 72 360 62 S 600 48 720 62 S 960 76 1080 62 S 1200 56 1300 62" />
+        <path d="M0 84 C 90 76 180 92 270 84 S 450 74 540 84 S 720 94 810 84 S 990 74 1080 84 S 1200 90 1300 84" />
+      </svg>
+    </div>
   </section>
 </template>

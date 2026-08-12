@@ -14,18 +14,26 @@ const items = [
 </script>
 
 <template>
-  <section id="contact" class="px-4 py-24 sm:px-6">
-    <div class="mx-auto max-w-[800px] text-center">
+  <section id="contact" class="relative overflow-hidden bg-navy px-4 py-24 sm:px-6">
+    <div
+      class="pointer-events-none absolute inset-0"
+      style="background:
+        radial-gradient(46% 42% at 18% 20%, rgba(99, 91, 255, 0.22), transparent 62%),
+        radial-gradient(36% 34% at 85% 75%, rgba(129, 184, 26, 0.12), transparent 58%),
+        radial-gradient(30% 30% at 65% 10%, rgba(41, 151, 255, 0.16), transparent 60%)"
+      aria-hidden="true"
+    ></div>
+    <div class="relative mx-auto max-w-[800px] text-center">
       <AnimatedSection>
         <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">{{ contact.heading }}</h2>
-        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-secondary">{{ contact.sub }}</p>
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-300">{{ contact.sub }}</p>
       </AnimatedSection>
 
       <AnimatedSection :delay="0.1">
-        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href="mailto:hello@yourdomain.dev?subject=Hiring%20—%20Full-Stack%20Developer"
-            class="w-full rounded-full border border-white/10 px-10 py-5 text-lg font-semibold text-white transition-all duration-300 hover:border-cyan/50 hover:text-cyan sm:w-auto"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-10 py-5 text-lg font-semibold text-navy shadow-btn transition-all duration-300 hover:-translate-y-0.5 hover:bg-indigo hover:text-white hover:shadow-lift sm:w-auto"
           >
             {{ contact.cta1 }}
           </a>
@@ -33,7 +41,7 @@ const items = [
             href="https://github.com/YOURUSERNAME"
             target="_blank"
             rel="noopener"
-            class="w-full rounded-full border border-white/10 px-10 py-5 text-lg font-semibold text-white transition-all duration-300 hover:border-cyan/50 hover:text-cyan sm:w-auto"
+            class="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/5 px-10 py-5 text-lg font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/10 sm:w-auto"
           >
             {{ contact.cta2 }}
           </a>
@@ -41,14 +49,14 @@ const items = [
       </AnimatedSection>
 
       <AnimatedSection :delay="0.2">
-        <div class="mt-16 flex flex-wrap justify-center gap-8">
+        <div class="mt-14 flex flex-wrap justify-center gap-8">
           <a
             v-for="(item, i) in items"
             :key="i"
             :href="item.href"
             target="_blank"
             rel="noopener"
-            class="flex items-center gap-2 text-sm text-secondary transition-colors hover:text-cyan"
+            class="flex items-center gap-2 text-sm text-slate-300 transition-colors hover:text-white"
           >
             <component :is="item.icon" :size="18" class="text-slate-400" />
             <span class="text-start">{{ item.value }}</span>

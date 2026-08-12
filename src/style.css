@@ -7,24 +7,24 @@ html {
 }
 
 body {
-  background: #0a0a0f;
-  color: #e8e8f0;
+  background: #ffffff;
+  color: #0a2540;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #22d3ee;
-  color: #0a0a0f;
+  background: #635bff;
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #6b6b80;
+  background: #c6d0da;
   border-radius: 3px;
 }
 
@@ -56,49 +56,109 @@ body {
   animation: blink 1s step-end infinite;
 }
 
-/* ---- Noise texture ---- */
-.noise-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 2;
+/* ---- Aurora mesh background (Stripe-style detailed gradient) ---- */
+.aurora {
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 130%;
   pointer-events: none;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  background:
+    radial-gradient(42% 38% at 12% 28%, rgba(99, 91, 255, 0.14), transparent 62%),
+    radial-gradient(38% 34% at 88% 12%, rgba(129, 184, 26, 0.16), transparent 64%),
+    radial-gradient(46% 42% at 78% 62%, rgba(99, 91, 255, 0.1), transparent 66%),
+    radial-gradient(36% 32% at 30% 78%, rgba(41, 151, 255, 0.1), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
+  filter: saturate(1.15);
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora {
+    animation: none;
+  }
 }
 
-/* ---- Topographic contour lines ---- */
-.bg-contours {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='300'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M0,54 C60,30 120,70 180,52 S300,40 360,56 S460,72 480,56'/%3E%3Cpath d='M0,104 C60,82 120,120 180,104 S300,88 360,108 S460,120 480,108'/%3E%3Cpath d='M0,152 C60,130 120,172 180,150 S300,136 360,154 S460,172 480,154'/%3E%3Cpath d='M0,202 C60,180 120,220 180,200 S300,188 360,206 S460,218 480,206'/%3E%3Cpath d='M0,252 C60,230 120,272 180,250 S300,238 360,256 S460,268 480,256'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 480px 300px;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 82%, transparent);
-  mask-image: linear-gradient(to bottom, transparent, black 12%, black 82%, transparent);
+/* ---- Stripe-style hero fullbleed hairlines ---- */
+.hero-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(10, 37, 64, 0.09);
 }
 
-/* ---- Dot grid ---- */
-.bg-dots {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+/* ---- Section heading spotlight (soft Stripe-style glow) ---- */
+.spotlight {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 720px;
+  max-width: 90vw;
+  height: 340px;
+  transform: translateX(-50%);
   pointer-events: none;
-  opacity: 0.35;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1.2px);
-  background-size: 28px 28px;
-  -webkit-mask-image: radial-gradient(ellipse 62% 55% at 50% 38%, black 25%, transparent 78%);
-  mask-image: radial-gradient(ellipse 62% 55% at 50% 38%, black 25%, transparent 78%);
+  background:
+    radial-gradient(38% 42% at 34% 40%, rgba(99, 91, 255, 0.09), transparent 70%),
+    radial-gradient(34% 38% at 66% 52%, rgba(129, 184, 26, 0.07), transparent 72%),
+    radial-gradient(30% 34% at 50% 22%, rgba(41, 151, 255, 0.06), transparent 70%);
 }
 
-/* ---- Neutral depth sheen (hero pool) ---- */
-.bg-spot {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+/* ---- Bento-style card with soft inner gradient ---- */
+.bento {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 249, 252, 0.85)),
+    #ffffff;
+}
+
+/* ---- Gradient hairline divider (Stripe section boundary) ---- */
+.hairline-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99, 91, 255, 0.28), rgba(129, 184, 26, 0.18), transparent);
+}
+
+/* ---- Hero wave (thin sine lines, slow drift) ---- */
+.hero-wave-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 96px;
+  overflow: hidden;
   pointer-events: none;
-  background: radial-gradient(ellipse 60% 42% at 50% -6%, rgba(255, 255, 255, 0.05), transparent 70%);
+}
+.hero-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  animation: wave-drift 22s linear infinite;
+}
+.hero-wave path {
+  fill: none;
+  stroke: rgba(10, 37, 64, 0.09);
+  stroke-width: 1;
+}
+.hero-wave path.point {
+  stroke: rgba(99, 91, 255, 0.5);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 6;
+  stroke-linecap: round;
+}
+@keyframes wave-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-wave {
+    animation: none;
+  }
 }
 
 /* ---- Link underline grows left to right ---- */
@@ -121,8 +181,6 @@ body {
   transform: scaleX(1);
 }
 
-/* ---- Tech badge pulse ---- */
-
 /* ---- FAQ accordion ---- */
 .faq-a {
   display: grid;
@@ -142,25 +200,13 @@ body {
   transform: rotate(45deg);
 }
 
-/* ---- Sprint track ---- */
-.track-line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  height: 2px;
-  transform: translateY(-50%);
-  background: linear-gradient(90deg, #22d3ee, #a78bfa);
-  opacity: 0.25;
-}
-
-/* ---- Code peek / syntax coloring ---- */
-.code-kw { color: #c678dd; }
-.code-var { color: #e5c07b; }
-.code-str { color: #98c379; }
-.code-fn { color: #61afef; }
-.code-com { color: #5c6370; font-style: italic; }
-.code-punc { color: #abb2bf; }
+/* ---- Code peek / syntax coloring (dark code blocks on light page) ---- */
+.code-kw { color: #c792ea; }
+.code-var { color: #82aaff; }
+.code-str { color: #c3e88d; }
+.code-fn { color: #89ddff; }
+.code-com { color: #5e7ba8; font-style: italic; }
+.code-punc { color: #aab8d8; }
 
 /* ---- Arabic / RTL ---- */
 [dir='rtl'] body,
@@ -187,6 +233,11 @@ body {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+/* ---- Marquee edge fade (Stripe-style soft edges) ---- */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
     animation: none;
@@ -200,7 +251,7 @@ body {
   display: inline-block;
   width: 9px;
   height: 1.05em;
-  background: #22d3ee;
+  background: #635bff;
   vertical-align: text-bottom;
   animation: blink 1s step-end infinite;
 }
@@ -224,6 +275,7 @@ body {
   transition: all 0.3s ease;
 }
 .diagram-node:hover {
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: #635bff;
+  box-shadow: 0 8px 24px rgba(99, 91, 255, 0.12);
   transform: translateY(-3px);
 }

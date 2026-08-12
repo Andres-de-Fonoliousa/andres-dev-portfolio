@@ -6,8 +6,8 @@ defineProps({
 
 <template>
   <div
-    class="rounded-2xl border border-white/[0.06] bg-[#111118]/60 backdrop-blur-xl transition-all duration-300"
-    :class="hover ? 'hover:-translate-y-1 hover:border-white/20 hover:shadow-card' : ''"
+    class="rounded-lg border border-line bg-white shadow-card transition-all duration-300"
+    :class="hover ? 'hover:-translate-y-1 hover:border-indigo/40 hover:shadow-lift' : ''"
   >
     <slot />
   </div>

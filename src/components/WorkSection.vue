@@ -11,20 +11,21 @@ const projects = computed(() => [work.value.p1, work.value.p2, work.value.p3])
 const current = computed(() => projects.value[active.value])
 
 const statusStyles = [
-  'border-cyan/20 bg-cyan/10 text-cyan',
-  'border-cyan/20 bg-cyan/10 text-cyan',
-  'border-white/10 bg-white/5 text-muted',
+  'border-lime/30 bg-lime/10 text-[#5c7f0a]',
+  'border-indigo/30 bg-indigo/10 text-indigo',
+  'border-line bg-mist text-muted',
 ]
 </script>
 
 <template>
-  <section id="work" class="px-4 py-24 sm:px-6">
-    <div class="mx-auto max-w-[1100px]">
+  <section id="work" class="hairline-top relative overflow-hidden bg-mist px-4 py-24 sm:px-6">
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-[1100px]">
       <AnimatedSection class="text-center">
-        <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-cyan">
+        <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-indigo">
           {{ work.label }}
         </p>
-        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-primary sm:text-4xl md:text-5xl">
           {{ work.heading1 }}<br class="hidden sm:block" />
           {{ work.heading2 }}
         </h2>
@@ -35,11 +36,11 @@ const statusStyles = [
           v-for="(p, i) in projects"
           :key="i"
           @click="active = i"
-          class="rounded-full px-5 py-2.5 font-mono text-xs transition-all duration-300"
+          class="rounded-lg border px-5 py-2.5 font-mono text-xs transition-all duration-300"
           :class="
             active === i
-              ? 'border border-cyan/50 font-semibold text-cyan'
-              : 'border border-white/10 text-secondary hover:border-cyan/40 hover:text-cyan'
+              ? 'border-indigo bg-indigo font-semibold text-white shadow-card'
+              : 'border-line bg-white text-secondary hover:border-indigo/40 hover:text-indigo'
           "
         >
           {{ p.title }}
@@ -50,14 +51,14 @@ const statusStyles = [
         <Transition name="card" mode="out-in">
           <div :key="active" class="grid items-center gap-10 md:grid-cols-2 md:gap-12">
             <AnimatedSection>
-              <p class="font-mono text-xs uppercase tracking-[0.2em] text-cyan">
+              <p class="font-mono text-xs uppercase tracking-[0.2em] text-indigo">
                 {{ current.tag }}
               </p>
-              <h3 class="font-display mt-3 text-2xl font-bold leading-snug tracking-tight text-white md:text-3xl">{{ current.title }}</h3>
+              <h3 class="font-display mt-3 text-2xl font-bold leading-snug tracking-tight text-primary md:text-3xl">{{ current.title }}</h3>
               <p class="mt-4 leading-relaxed text-secondary">{{ current.desc }}</p>
               <ul v-if="current.points.length" class="mt-6 space-y-2 font-mono text-sm text-secondary">
                 <li v-for="point in current.points" :key="point" class="flex items-start gap-2">
-                  <Check :size="16" class="mt-0.5 shrink-0 text-cyan" />
+                  <Check :size="16" class="mt-0.5 shrink-0 text-lime" />
                   {{ point }}
                 </li>
               </ul>
@@ -73,7 +74,7 @@ const statusStyles = [
                   :href="current.href"
                   target="_blank"
                   rel="noopener"
-                  class="link-underline inline-flex items-center gap-1.5 font-mono text-sm text-cyan"
+                  class="link-underline inline-flex items-center gap-1.5 font-mono text-sm text-indigo"
                 >
                   {{ current.link }}
                   <ExternalLink :size="14" />
@@ -84,12 +85,13 @@ const statusStyles = [
             <AnimatedSection :delay="0.15">
               <!-- PROJECT 1 VISUAL: CoreS dashboard -->
               <div v-if="active === 0" class="relative">
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0f] shadow-card">
-                  <div class="flex items-center gap-2 border-b border-white/10 bg-[#0f0f16] px-4 py-2.5">
+                <div class="absolute -inset-6 rounded-3xl bg-gradient-to-br from-indigo/15 via-indigo/5 to-transparent blur-xl" aria-hidden="true"></div>
+                <div class="bento overflow-hidden rounded-xl border border-line shadow-card">
+                  <div class="flex items-center gap-2 border-b border-line bg-fog px-4 py-2.5">
                     <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
                     <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
                     <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
-                    <span class="ms-2 flex-1 truncate rounded bg-white/5 px-3 py-0.5 text-center font-mono text-[11px] text-muted">
+                    <span class="ms-2 flex-1 truncate rounded bg-white px-3 py-0.5 text-center font-mono text-[11px] text-muted">
                       corex-store / admin
                     </span>
                   </div>
@@ -101,7 +103,7 @@ const statusStyles = [
                   />
                 </div>
                 <div
-                  class="absolute -bottom-6 end-2 w-72 rounded-lg border border-white/10 bg-[#050507] p-4 font-mono text-xs text-cyan shadow-xl sm:-end-4"
+                  class="absolute -bottom-6 end-2 w-72 rounded-lg border border-line bg-codebg p-4 font-mono text-xs text-slate-200 shadow-card sm:-end-4"
                 >
                   <p class="text-slate-500">// Product catalog endpoint</p>
                   <p><span class="code-kw">Route</span>::<span class="code-fn">get</span>(<span class="code-str">'/api/products'</span>,</p>
@@ -110,7 +112,9 @@ const statusStyles = [
               </div>
 
               <!-- PROJECT 2 VISUAL: Telegram chat -->
-              <div v-else-if="active === 1" class="space-y-4">
+              <div v-else-if="active === 1" class="relative">
+                <div class="absolute -inset-6 rounded-3xl bg-gradient-to-br from-lime/15 via-lime/5 to-transparent blur-xl" aria-hidden="true"></div>
+                <div class="space-y-4">
                 <div class="max-w-xs space-y-3">
                   <div
                     v-for="(msg, i) in work.chat"
@@ -118,40 +122,42 @@ const statusStyles = [
                     class="p-4 text-sm"
                     :class="
                       msg.who === 'user'
-                        ? 'ms-8 rounded-2xl rounded-br-none border border-cyan/20 bg-cyan/10 text-primary'
-                        : 'rounded-2xl rounded-bl-none border border-white/10 bg-[#111118] text-secondary'
+                        ? 'ms-8 rounded-2xl rounded-br-none border border-indigo/30 bg-white text-primary shadow-card'
+                        : 'rounded-2xl rounded-bl-none border border-line bg-white text-secondary shadow-card'
                     "
                   >
-                    <span v-if="msg.mono" class="font-mono text-green-400" v-html="msg.text"></span>
+                    <span v-if="msg.mono" class="font-mono text-lime" v-html="msg.text"></span>
                     <span v-else v-html="msg.text"></span>
                   </div>
                 </div>
-                <div class="w-full max-w-xs rounded-lg border border-white/10 bg-[#050507] p-4 font-mono text-xs text-slate-300 shadow-xl sm:ms-auto">
+                <div class="w-full max-w-xs rounded-lg border border-line bg-codebg p-4 font-mono text-xs text-slate-300 shadow-card sm:ms-auto">
                   <p class="text-slate-500">@dp.message_handler(commands=['revenue'])</p>
                   <p><span class="code-kw">async def</span> <span class="code-fn">daily_report</span>(message: <span class="code-kw">types</span>.Message):</p>
                   <p class="ps-4">data = <span class="code-kw">await</span> <span class="code-fn">fetch_today</span>()</p>
                   <p class="ps-4"><span class="code-kw">await</span> message.<span class="code-fn">reply</span>(<span class="code-fn">format_revenue</span>(data))</p>
                 </div>
               </div>
+              </div>
 
               <!-- PROJECT 3 VISUAL: 3D viewer -->
-              <div v-else>
-                <div class="overflow-hidden rounded-xl border border-white/10 bg-[#0a0a0f] shadow-card">
-                  <div class="flex items-center gap-2 border-b border-white/10 bg-[#0f0f16] px-4 py-2.5">
+              <div v-else class="relative">
+                <div class="absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#2d9cdb]/20 via-[#2d9cdb]/8 to-transparent blur-xl" aria-hidden="true"></div>
+                <div class="bento overflow-hidden rounded-xl border border-line shadow-card">
+                  <div class="flex items-center gap-2 border-b border-line bg-fog px-4 py-2.5">
                     <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
                     <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
                     <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
-                    <span class="ms-2 flex-1 truncate rounded bg-white/5 px-3 py-0.5 text-center font-mono text-[11px] text-muted">
+                    <span class="ms-2 flex-1 truncate rounded bg-white px-3 py-0.5 text-center font-mono text-[11px] text-muted">
                       three.js + MediaPipe hand tracking
                     </span>
                   </div>
                   <div
-                    class="relative flex h-64 items-center justify-center bg-gradient-to-br from-[#0d0d1a] to-[#0a0a0f] sm:h-72"
+                    class="relative flex h-64 items-center justify-center bg-gradient-to-br from-fog to-mist sm:h-72"
                   >
                     <div
-                      class="relative flex h-28 w-28 items-center justify-center rounded-2xl border border-violet/30 bg-violet/10"
+                      class="relative flex h-28 w-28 items-center justify-center rounded-xl border border-indigo/30 bg-indigo/10"
                     >
-                      <p class="font-mono text-4xl text-violet">Y</p>
+                      <p class="font-mono text-4xl text-indigo">Y</p>
                     </div>
                   </div>
                 </div>

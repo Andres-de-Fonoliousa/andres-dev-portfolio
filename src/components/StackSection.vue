@@ -1,9 +1,10 @@
 <script setup>
 import AnimatedSection from './AnimatedSection.vue'
 import TerminalWindow from './TerminalWindow.vue'
+import GlassCard from './GlassCard.vue'
 import { useI18n } from '../i18n.js'
 
-const stack = useI18n('stack')
+const stack = useI18n('skills')
 
 const dots = {
   Laravel: '#ff2d20',
@@ -13,29 +14,30 @@ const dots = {
   'MySQL/PostgreSQL': '#336791',
   Redis: '#dc382d',
   Docker: '#2496ed',
-  'Git/GitHub': '#f5f5f5',
+  'Git/GitHub': '#0a2540',
 }
 </script>
 
 <template>
-  <section id="stack" class="px-4 py-24 sm:px-6">
-    <div class="mx-auto max-w-[1200px]">
+  <section id="stack" class="relative overflow-hidden px-4 py-24 sm:px-6">
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-[1200px]">
       <AnimatedSection class="text-center">
-        <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-cyan">
+        <p class="mb-4 font-mono text-xs uppercase tracking-[0.25em] text-indigo">
           {{ stack.label }}
         </p>
-        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl">{{ stack.heading }}</h2>
+        <h2 class="font-display text-3xl font-bold leading-tight tracking-tight text-primary sm:text-4xl md:text-5xl">{{ stack.heading }}</h2>
         <p class="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-secondary">{{ stack.sub }}</p>
       </AnimatedSection>
 
-      <div class="mt-12 flex flex-wrap justify-center gap-4">
+      <div class="mt-12 flex flex-wrap justify-center gap-3">
         <AnimatedSection
           v-for="(tech, i) in stack.techs"
           :key="tech.name"
           :delay="(i % 4) * 0.1"
         >
           <div
-            class="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-[#111118] px-6 py-4 transition-all duration-300 hover:border-white/20"
+            class="flex items-center gap-3 rounded-lg border border-line bg-white px-6 py-4 shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:border-indigo/40 hover:shadow-lift"
           >
             <span class="h-2 w-2 rounded-full" :style="{ backgroundColor: dots[tech.name] }"></span>
             <span class="font-mono text-sm text-primary">{{ tech.name }}</span>
@@ -44,25 +46,25 @@ const dots = {
       </div>
 
       <AnimatedSection class="mx-auto mt-10 max-w-3xl">
-        <div class="rounded-2xl border border-white/[0.06] bg-[#111118]/60 p-8 backdrop-blur-xl">
-          <p class="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-cyan">
+        <GlassCard class="bento p-8">
+          <p class="mb-5 font-mono text-xs uppercase tracking-[0.2em] text-indigo">
             {{ stack.proficiency }}
           </p>
           <div class="space-y-5">
             <div v-for="tech in stack.techs" :key="tech.name">
               <div class="mb-1.5 flex items-center justify-between">
                 <span class="font-mono text-sm text-secondary">{{ tech.name }}</span>
-                <span class="font-mono text-xs text-muted">{{ tech.pct }}%</span>
+                <span class="font-mono text-xs tabular-nums text-muted">{{ tech.pct }}%</span>
               </div>
-              <div class="h-1.5 rounded-full bg-white/10">
+              <div class="h-1.5 rounded-full bg-fog">
                 <div
-                  class="h-full rounded-full bg-cyan transition-all duration-1000 ease-spring"
+                  class="h-full rounded-full bg-indigo transition-all duration-1000 ease-spring"
                   :style="{ width: tech.pct + '%' }"
                 ></div>
               </div>
             </div>
           </div>
-        </div>
+        </GlassCard>
       </AnimatedSection>
 
       <AnimatedSection :delay="0.1" class="mx-auto mt-16 max-w-3xl text-start">

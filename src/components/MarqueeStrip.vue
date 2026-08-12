@@ -6,10 +6,10 @@ const strip = useI18n('marquee')
 
 <template>
   <div
-    class="relative overflow-hidden border-y border-white/[0.06] bg-[#06060b] py-4"
+    class="relative overflow-hidden border-y border-line bg-mist py-4"
     aria-hidden="true"
   >
-    <div class="marquee-track">
+    <div class="marquee-track marquee-fade">
       <div
         v-for="n in 2"
         :key="n"
@@ -17,7 +17,7 @@ const strip = useI18n('marquee')
       >
         <span v-for="t in strip" :key="t" class="flex items-center gap-8">
           {{ t }}
-          <span class="text-cyan/50">/</span>
+          <span class="text-indigo/50">/</span>
         </span>
       </div>
     </div>

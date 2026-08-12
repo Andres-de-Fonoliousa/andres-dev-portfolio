@@ -13,12 +13,7 @@ import MarqueeStrip from './components/MarqueeStrip.vue'
 </script>
 
 <template>
-  <div class="relative min-h-screen bg-bg font-body text-primary antialiased">
-    <div class="bg-contours" aria-hidden="true"></div>
-    <div class="bg-dots" aria-hidden="true"></div>
-    <div class="bg-spot" aria-hidden="true"></div>
-    <div class="noise-overlay" aria-hidden="true"></div>
-
+  <div class="relative min-h-screen bg-white font-body text-primary antialiased">
     <LanguageSwitch />
     <NavPill />
 

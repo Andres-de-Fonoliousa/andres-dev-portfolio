@@ -4,7 +4,7 @@ import { lang, setLang } from '../i18n.js'
 
 <template>
   <div
-    class="fixed end-4 top-4 z-50 flex items-center gap-1 rounded-full border border-white/10 bg-bg/80 p-1 backdrop-blur-xl"
+    class="fixed end-4 top-4 z-50 flex items-center gap-1 rounded-full border border-line bg-white/90 p-1 shadow-card backdrop-blur-xl"
     role="group"
     aria-label="Language"
   >
@@ -12,8 +12,8 @@ import { lang, setLang } from '../i18n.js'
         @click="setLang('en')"
         :class="
           lang === 'en'
-            ? 'border border-cyan/50 font-semibold text-cyan'
-            : 'border border-transparent text-secondary hover:text-primary'
+            ? 'bg-indigo font-semibold text-white'
+            : 'text-secondary hover:text-primary'
         "
         class="rounded-full px-4 py-1.5 font-mono text-xs transition-all duration-300"
       >
@@ -23,8 +23,8 @@ import { lang, setLang } from '../i18n.js'
         @click="setLang('ar')"
         :class="
           lang === 'ar'
-            ? 'border border-cyan/50 font-semibold text-cyan'
-            : 'border border-transparent text-secondary hover:text-primary'
+            ? 'bg-indigo font-semibold text-white'
+            : 'text-secondary hover:text-primary'
         "
         class="rounded-full px-4 py-1.5 font-mono text-xs transition-all duration-300"
       >
