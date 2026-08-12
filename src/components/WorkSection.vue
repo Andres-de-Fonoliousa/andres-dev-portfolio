@@ -6,8 +6,8 @@ import { useI18n } from '../i18n.js'
 const work = useI18n('work')
 
 const statusStyles = [
-  'border-green-400/20 bg-green-400/10 text-green-400',
-  'border-green-400/20 bg-green-400/10 text-green-400',
+  'border-cyan/20 bg-cyan/10 text-cyan',
+  'border-cyan/20 bg-cyan/10 text-cyan',
   'border-white/10 bg-white/5 text-muted',
 ]
 </script>
@@ -104,6 +104,17 @@ const statusStyles = [
           >
             {{ work.p2.status }}
           </span>
+          <div class="mt-6">
+            <a
+              :href="work.p2.href"
+              target="_blank"
+              rel="noopener"
+              class="link-underline inline-flex items-center gap-1.5 font-mono text-sm text-cyan"
+            >
+              {{ work.p2.link }}
+              <ExternalLink :size="14" />
+            </a>
+          </div>
         </AnimatedSection>
 
         <AnimatedSection :delay="0.15" class="md:order-1">
@@ -145,6 +156,17 @@ const statusStyles = [
           >
             {{ work.p3.status }}
           </span>
+          <div class="mt-6">
+            <a
+              :href="work.p3.href"
+              target="_blank"
+              rel="noopener"
+              class="link-underline inline-flex items-center gap-1.5 font-mono text-sm text-cyan"
+            >
+              {{ work.p3.link }}
+              <ExternalLink :size="14" />
+            </a>
+          </div>
         </AnimatedSection>
 
         <AnimatedSection :delay="0.15">

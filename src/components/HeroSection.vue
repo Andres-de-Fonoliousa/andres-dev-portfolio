@@ -47,15 +47,10 @@ const hero = useI18n('hero')
     <AnimatedSection :delay="0.15" class="mx-auto mt-12 max-w-lg text-start">
       <TerminalWindow title="~/projects">
         <div v-for="(line, i) in hero.terminal" :key="i" class="text-sm">
-          <p v-if="!line.result" class="text-slate-400" v-html="line.text"></p>
-          <p v-else>
-            <span
-              class="rounded px-1.5 py-0.5 text-[10px] font-semibold"
-              :class="line.ok ? 'bg-green-400/10 text-green-400' : 'bg-cyan/10 text-cyan'"
-            >
-              {{ line.result }}
-            </span>
-            <span class="ms-2 text-slate-300">{{ line.text }}</span>
+          <p v-if="line.text && !line.name" class="text-slate-400" v-html="line.text"></p>
+          <p v-else-if="line.name" class="flex flex-wrap items-center gap-x-2">
+            <span class="text-cyan">{{ line.name }}</span>
+            <span class="text-slate-500">{{ line.note }}</span>
           </p>
         </div>
       </TerminalWindow>
