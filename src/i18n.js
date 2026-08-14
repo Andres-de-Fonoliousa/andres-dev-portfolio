@@ -15,7 +15,7 @@ export const messages = {
       sub: "I'm Yazan (CoreX) — a full-stack developer working with Laravel, Vue and Python. I've designed and built e-commerce platforms, automation bots and admin dashboards: databases, REST APIs, front-ends, deployments — the whole stack. I own features end-to-end, and I'm ready to do it for your team. Remote, UTC+3.",
       cta1: 'Hire Me',
       cta2: 'View GitHub',
-      meta: 'Open to mid-level full-stack roles — remote, immediate start.',
+      meta: 'Open to full-stack roles — remote, immediate start.',
       terminal: [
         { text: '<span class="code-kw">$</span> ls ~/repos', result: '' },
         { name: 'corex-store/', note: 'Laravel • Vue • REST API • multi-tenant platform' },
@@ -127,7 +127,7 @@ export const messages = {
     },
     contact: {
       heading: "Let's build something real",
-      sub: "If your team needs a developer who delivers complete features — design, build, deploy, document — I'm available now. Mid-level Laravel/Vue/Python, remote, UTC+3. Expect an answer within hours.",
+      sub: "If your team needs a developer who delivers complete features — design, build, deploy, document — I'm available now. Laravel/Vue/Python, remote, UTC+3. Expect an answer within hours.",
       cta1: 'Hire Me',
       cta2: 'View GitHub',
       labels: {
@@ -162,7 +162,7 @@ export const messages = {
         },
         {
           q: 'What level of role are you looking for?',
-          a: 'Mid-level full-stack, Laravel/Vue/Python. I can own features and small projects independently, and I am honest about what I am still learning.',
+          a: 'Full-stack, Laravel/Vue/Python. I can own features and small projects independently, and I am honest about what I am still learning.',
         },
         {
           q: 'How do you handle code reviews and feedback?',
@@ -183,14 +183,14 @@ export const messages = {
     nav: {
       about: 'عنّي',
       work: 'الأعمال',
-      stack: 'التقنيات',
+      stack: 'الأدوات',
       faq: 'أسئلة',
       contact: 'تواصل',
     },
     hero: {
       eyebrow: 'مطوّر فول ستاك • لارافيل • فيو • بايثون',
       lines: ['أصمّم وأبني وأُسلّم', 'أنظمة متكاملة —', 'من قاعدة البيانات حتى النشر.'],
-      sub: 'أنا يزن (CoreX) — مطوّر فول ستاك أعمل بـ لارافيل وفيو وبايثون. صمّمت وبنيت منصات تجارة إلكترونية، بوتات أتمتة، ولوحات تحكم: قواعد البيانات، واجهات REST، الواجهات الأمامية، والنشر — المكدس كاملاً. أملك الميزات من البداية إلى النهاية، وأنا جاهز للقيام بذلك لفريقك. عن بُعد، UTC+3.',
+      sub: 'أنا يزن (CoreX) — مطوّر فول ستاك أعمل بـ لارافيل وفيو وبايثون. صمّمت وبنيت منصات تجارة إلكترونية، بوتات أتمتة، ولوحات تحكم: قواعد البيانات، واجهات REST، الواجهات الأمامية، والنشر — المكدس كاملاً. أُسلّم الميزات من البداية إلى النهاية، وأنا جاهز للقيام بذلك لفريقك. عن بُعد، UTC+3.',
       cta1: 'وظّفني',
       cta2: 'شاهد GitHub',
       meta: 'متاح لوظائف فول ستاك عن بُعد — بدء فوري.',
@@ -205,9 +205,9 @@ export const messages = {
       label: 'عنّي',
       heading: 'من أنا',
       p1: 'أبني منتجات كاملة، لا أجزاء متفرقة. بدأ CoreS فكرة واحدة وانتهى نظاماً متكاملاً — وهكذا يتكوّن:',
-      p3: 'المعيار الذي ألتزم به: كود يُقرأ بوضوح، ميزات مملوكة حتى آخر نشر، وتواصل يبقي الجميع على علم.',
+      p3: 'المعيار الذي ألتزم به: كود يُقرأ بوضوح، ميزات أُسلّمها حتى آخر نشر، وتواصل يبقي الجميع على علم.',
       diagram: [
-        { name: 'قاعدة البيانات', note: 'النظام والهجرات' },
+        { name: 'قاعدة البيانات', note: 'الأنظمة والبيانات' },
         { name: 'REST API', note: 'خلفية Laravel' },
         { name: 'Redis', note: 'تخزين وتوافيق' },
         { name: 'لوحة التحكم', note: 'Vue 3 + Tailwind' },
@@ -217,8 +217,8 @@ export const messages = {
       chips: ['بناء متكامل', 'REST APIs', 'أنظمة غير متزامنة', 'تعددية المتاجر', 'بنية تحتية ذاتية', 'عن بُعد • UTC+3'],
     },
     skills: {
-      label: 'التقنيات',
-      heading: 'المكدس الذي بُنيت به أنظمة كاملة',
+      label: 'الأدوات',
+      heading: 'الأدوات التي بُنيت بها أنظمة كاملة',
       sub: 'كل أداة هنا جزء من أنظمة صمّمتها وبنيتها بالكامل — منصات وبوتات ولوحات تحكم. لا تجارب هنا.',
       proficiency: 'درجة الإتقان',
       techs: [
@@ -298,14 +298,14 @@ export const messages = {
           body: 'الحالة مكتوبة وفي موعدها، بلا تخمين. إن وُجدت مشكلة، تسمع عنها مبكراً — لا بعد فوات الموعد.',
         },
         {
-          title: 'ملكية كاملة للميزات',
-          body: 'من مخطط قاعدة البيانات حتى النشر: أملك الميزة بالكامل، بما فيه الأجزاء غير الممتعة كالاختبار والتوثيق.',
+          title: 'أُسلّم ميزات كاملة',
+          body: 'من قاعدة البيانات حتى النشر: أُسلّم الميزة كاملة، بما فيه الأجزاء غير الممتعة كالاختبار والتوثيق.',
         },
       ],
     },
     contact: {
       heading: 'لنبنِ شيئاً حقيقياً',
-      sub: 'إذا كان فريقك يحتاج مطوّراً يسلّم ميزات كاملة — تصميم، بناء، نشر، توثيق — فأنا متاح الآن. لارافيل وفيو وبايثون بمستوى متوسط، عن بُعد، UTC+3. سأرد خلال ساعات.',
+      sub: 'إذا كان فريقك يحتاج مطوّراً يسلّم ميزات كاملة — تصميم، بناء، نشر، توثيق — فأنا متاح الآن. لارافيل وفيو وبايثون، عن بُعد، UTC+3. سأرد خلال ساعات.',
       cta1: 'وظّفني',
       cta2: 'شاهد GitHub',
       labels: {
@@ -340,7 +340,7 @@ export const messages = {
         },
         {
           q: 'أي مستوى من الوظائف تبحث عنه؟',
-          a: 'فول ستاك بمستوى متوسط: Laravel/Vue/Python. أستطيع امتلاك الميزات والمشاريع الصغيرة بشكل مستقل، وأنا صريح فيما ما زلت أتعلمه.',
+          a: 'فول ستاك: Laravel/Vue/Python. أستطيع تسليم الميزات والمشاريع الصغيرة بشكل مستقل، وأنا صريح فيما ما زلت أتعلمه.',
         },
         {
           q: 'كيف تتعامل مع مراجعة الكود والملاحظات؟',
