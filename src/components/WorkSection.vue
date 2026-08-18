@@ -7,13 +7,12 @@ import { useI18n } from '../i18n.js'
 const work = useI18n('work')
 const active = ref(0)
 
-const projects = computed(() => [work.value.p1, work.value.p2, work.value.p3])
+const projects = computed(() => [work.value.p1, work.value.p2])
 const current = computed(() => projects.value[active.value])
 
 const statusStyles = [
   'border-lime/30 bg-lime/10 text-[#5c7f0a]',
   'border-indigo/30 bg-indigo/10 text-indigo',
-  'border-line bg-mist text-muted',
 ]
 </script>
 
@@ -96,7 +95,7 @@ const statusStyles = [
                     </span>
                   </div>
                   <img
-                    src="/saas-dashboard.jpeg"
+                    src="/cores-dashboard.png"
                     alt="CoreS admin dashboard"
                     class="h-64 w-full object-cover object-top sm:h-72"
                     loading="lazy"
@@ -137,30 +136,6 @@ const statusStyles = [
                   <p class="ps-4"><span class="code-kw">await</span> message.<span class="code-fn">reply</span>(<span class="code-fn">format_revenue</span>(data))</p>
                 </div>
               </div>
-              </div>
-
-              <!-- PROJECT 3 VISUAL: 3D viewer -->
-              <div v-else class="relative">
-                <div class="absolute -inset-6 rounded-3xl bg-gradient-to-br from-[#2d9cdb]/20 via-[#2d9cdb]/8 to-transparent blur-xl" aria-hidden="true"></div>
-                <div class="bento overflow-hidden rounded-xl border border-line shadow-card">
-                  <div class="flex items-center gap-2 border-b border-line bg-fog px-4 py-2.5">
-                    <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
-                    <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
-                    <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
-                    <span class="ms-2 flex-1 truncate rounded bg-white px-3 py-0.5 text-center font-mono text-[11px] text-muted">
-                      three.js + MediaPipe hand tracking
-                    </span>
-                  </div>
-                  <div
-                    class="relative flex h-64 items-center justify-center bg-gradient-to-br from-fog to-mist sm:h-72"
-                  >
-                    <div
-                      class="relative flex h-28 w-28 items-center justify-center rounded-xl border border-indigo/30 bg-indigo/10"
-                    >
-                      <p class="font-mono text-4xl text-indigo">Y</p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </AnimatedSection>
           </div>
