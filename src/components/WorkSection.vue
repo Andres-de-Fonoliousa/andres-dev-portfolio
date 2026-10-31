@@ -7,11 +7,12 @@ import { useI18n } from '../i18n.js'
 const work = useI18n('work')
 const active = ref(0)
 
-const projects = computed(() => [work.value.p1, work.value.p2])
+const projects = computed(() => [work.value.p1, work.value.p2, work.value.p3])
 const current = computed(() => projects.value[active.value])
 
 const statusStyles = [
   'border-lime/30 bg-lime/10 text-[#5c7f0a]',
+  'border-indigo/30 bg-indigo/10 text-indigo',
   'border-indigo/30 bg-indigo/10 text-indigo',
 ]
 </script>
@@ -110,7 +111,7 @@ const statusStyles = [
                 </div>
               </div>
 
-              <!-- PROJECT 2 VISUAL: Telegram chat -->
+               <!-- PROJECT 2 VISUAL: Telegram chat -->
               <div v-else-if="active === 1" class="relative">
                 <div class="absolute -inset-6 rounded-3xl bg-gradient-to-br from-lime/15 via-lime/5 to-transparent blur-xl" aria-hidden="true"></div>
                 <div class="space-y-4">
@@ -136,6 +137,40 @@ const statusStyles = [
                   <p class="ps-4"><span class="code-kw">await</span> message.<span class="code-fn">reply</span>(<span class="code-fn">format_revenue</span>(data))</p>
                 </div>
               </div>
+              </div>
+
+              <!-- PROJECT 3 VISUAL: Orchestra Swarm & Handoff -->
+              <div v-else-if="active === 2" class="relative pt-6 pe-4 pb-6">
+                <div class="absolute -top-2 -end-2 z-10 bg-white border border-line px-3 py-1.5 rounded-xl shadow-card hidden sm:flex items-center gap-2 font-mono text-[11px] text-secondary">
+                  <span class="text-indigo font-bold">λ</span>
+                  <span>swarm.py</span>
+                </div>
+                <div class="absolute -inset-6 rounded-3xl bg-gradient-to-br from-indigo/20 via-indigo/5 to-transparent blur-2xl" aria-hidden="true"></div>
+                
+                <div class="bento overflow-hidden rounded-2xl border border-line shadow-lift relative">
+                  <div class="flex items-center gap-2 border-b border-line bg-fog px-4 py-2.5">
+                    <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
+                    <span class="ms-2 flex-1 truncate rounded bg-white px-3 py-0.5 text-center font-mono text-[11px] text-muted">
+                      orchestra-memory / swarm runtime
+                    </span>
+                  </div>
+                  <div class="bg-codebg p-5 font-mono text-xs text-slate-200 space-y-3 shadow-inner">
+                    <p class="code-com">// Initialize headless swarm run</p>
+                    <p><span class="code-kw">orchestra</span> <span class="code-fn">run</span> <span class="code-str">"Build multi-tenant SaaS billing"</span> --depth <span class="code-var">1</span></p>
+                    <div class="border-t border-slate-800/80 pt-3 space-y-1.5 text-[11px]">
+                      <p class="text-purple-400">[orchestrator] Decomposing task tree...</p>
+                      <p class="text-indigo-300">[backend-dev] Implementing idempotent Stripe webhook...</p>
+                      <p class="text-lime font-semibold">[tester-sentinel] All 26 regression tests passed. PASS.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="absolute -bottom-6 end-2 w-72 rounded-xl border border-line bg-codebg p-4 font-mono text-xs text-slate-200 shadow-lift sm:-end-4">
+                  <p class="code-com"># Instant context recovery</p>
+                  <p class="text-blue-400">/handoff</p>
+                  <p class="text-slate-400 text-[11px]">→ Loaded handoff.md & 3-day journal in 0.4s.</p>
+                </div>
               </div>
             </AnimatedSection>
           </div>

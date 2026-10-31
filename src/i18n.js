@@ -87,6 +87,20 @@ export const messages = {
         link: 'Browse the source',
         href: 'https://github.com/Andres-de-Fonoliousa',
       },
+      p3: {
+        tag: 'Python • Git-Backed Memory • Multi-Agent Swarms',
+        title: 'Orchestra — AI Session Memory & Swarms',
+        desc: 'The persistent memory and orchestration layer for AI development. Bridges ephemeral chat sessions into a unified, version-controlled brain with SQLite FTS5 search and autonomous coding swarms.',
+        points: [
+          'Immutable Git-backed memory layer (~/.config/opencode/memory)',
+          'SQLite FTS5 full-text search indexing & auto-journaling plugin',
+          'Hierarchical multi-agent coding swarms via orchestra run',
+          'Stripe-grade visual dashboard via orchestra serve',
+        ],
+        status: 'OPEN SOURCE RELEASE',
+        link: 'Browse the repository',
+        href: 'https://github.com/Andres-de-Fonoliousa/agent_orchistration',
+      },
       chat: [
         { who: 'bot', text: 'New order received: <b>#4921</b>' },
         { who: 'bot', text: 'Cart updated — 3 items.' },
@@ -255,6 +269,20 @@ export const messages = {
         status: 'المصدر كاملاً على GitHub',
         link: 'تصفّح المصدر',
         href: 'https://github.com/Andres-de-Fonoliousa',
+      },
+      p3: {
+        tag: 'بايثون • ذاكرة مدعومة بـ Git • أسر عملاء ذكية',
+        title: 'Orchestra — ذاكرة جلسات الذكاء الاصطناعي والأسر البرمجية',
+        desc: 'طبقة الذاكرة المستمرة والتنسيق لتطوير الذكاء الاصطناعي. تربط جلسات الدردشة المؤقتة بدماغ موحد ومتحكم بنسخه مع بحث FTS5 وأسر برمجية ذاتية.',
+        points: [
+          'طبقة ذاكرة ثابتة مدعومة بـ Git',
+          'فهرسة بحث FTS5 وإضافة يوميات تلقائية',
+          'أسر برمجية متعددة الوكلاء عبر orchestra run',
+          'لوحة تحكم بصرية بمعيار Stripe عبر orchestra serve',
+        ],
+        status: 'إصدار مفتوح المصدر',
+        link: 'تصفّح المستودع',
+        href: 'https://github.com/Andres-de-Fonoliousa/agent_orchistration',
       },
       chat: [
         { who: 'bot', text: 'وصل طلب جديد: <b>#4921</b>' },
