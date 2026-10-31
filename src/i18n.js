@@ -71,7 +71,7 @@ export const messages = {
         ],
         status: 'FULL SOURCE ON GITHUB',
         link: 'Browse the source',
-        href: 'https://github.com/Andres-de-Fonoliousa',
+        href: 'https://github.com/Andres-de-Fonoliousa/core-store',
       },
       p2: {
         tag: 'Python • Async • Automation',
@@ -85,7 +85,7 @@ export const messages = {
         ],
         status: 'FULL SOURCE ON GITHUB',
         link: 'Browse the source',
-        href: 'https://github.com/Andres-de-Fonoliousa',
+        href: 'https://github.com/Andres-de-Fonoliousa/telegram-store-bot2',
       },
       p3: {
         tag: 'Python • Git-Backed Memory • Multi-Agent Swarms',
@@ -99,7 +99,7 @@ export const messages = {
         ],
         status: 'OPEN SOURCE RELEASE',
         link: 'Browse the repository',
-        href: 'https://github.com/Andres-de-Fonoliousa/agent_orchistration',
+        href: 'https://github.com/Andres-de-Fonoliousa/orchestra',
       },
       chat: [
         { who: 'bot', text: 'New order received: <b>#4921</b>' },
@@ -254,7 +254,7 @@ export const messages = {
         ],
         status: 'المصدر كاملاً على GitHub',
         link: 'تصفّح المصدر',
-        href: 'https://github.com/Andres-de-Fonoliousa',
+        href: 'https://github.com/Andres-de-Fonoliousa/core-store',
       },
       p2: {
         tag: 'بايثون • غير متزامن • أتمتة',
@@ -268,7 +268,7 @@ export const messages = {
         ],
         status: 'المصدر كاملاً على GitHub',
         link: 'تصفّح المصدر',
-        href: 'https://github.com/Andres-de-Fonoliousa',
+        href: 'https://github.com/Andres-de-Fonoliousa/telegram-store-bot2',
       },
       p3: {
         tag: 'بايثون • ذاكرة مدعومة بـ Git • أسر عملاء ذكية',
@@ -282,7 +282,7 @@ export const messages = {
         ],
         status: 'إصدار مفتوح المصدر',
         link: 'تصفّح المستودع',
-        href: 'https://github.com/Andres-de-Fonoliousa/agent_orchistration',
+        href: 'https://github.com/Andres-de-Fonoliousa/orchestra',
       },
       chat: [
         { who: 'bot', text: 'وصل طلب جديد: <b>#4921</b>' },
